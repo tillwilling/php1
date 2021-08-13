@@ -19,10 +19,10 @@ SELECT * FROM city WHERE population BETWEEN 200000 AND 300000;
 SELECT * FROM country WHERE governmentform = "Republic" OR governmentform = "Monarchy";
 
 -- g) In welchem afrikanischen Land ist die Lebenserwartung am höchsten?
-SELECT * FROM country WHERE continent IN('africa') ORDER BY lifeexpectancy DESC;
+SELECT * FROM country WHERE continent = 'africa' ORDER BY lifeexpectancy DESC;
 
 -- h) Welche 3 Länder in Süd-Amerika haben die höchste Einwohnerzahl?
-SELECT * FROM country WHERE continent IN('south america') ORDER BY population DESC LIMIT 3;
+SELECT * FROM country WHERE continent = 'south america' ORDER BY population DESC LIMIT 3;
 
 -- i) Welche Länder wurden von 1900 bis 1910 oder von 1960 bis 1970 unabhängig?
 SELECT * FROM country WHERE indepyear BETWEEN 1910 AND 1910 OR indepyear BETWEEN 1960 AND 1970;
@@ -32,23 +32,39 @@ SELECT * FROM country WHERE continent IN('south america', 'north america') AND p
 
 -- k) Welche Länder in Europa und welche Länder in Afrika haben eine durchschnittliche 
 --    Lebenserwartung von 60 bis 70 Jahren?
-
+SELECT * FROM country WHERE continent IN('europe', 'africa') AND lifeexpectancy BETWEEN 60 AND 70;
 
 -- l) Wie viele Länder gibt es auf dem Kontinent Europa?
--- m) Welche Ländernamen enden mit "um"?
+SELECT count(*) FROM country WHERE continent = 'europe';
 
+-- m) Welche Ländernamen enden mit "um"?
+SELECT * FROM country WHERE name LIKE '%um';
 
 -- Alle nachfolgenden SQL-Aufgaben beziehen sich auf die sakila-Datenbank, Tabelle film
 
 -- a) Alle Filme auswählen, die eine Ausleihgebühr (rental_rate) von 0.99 - 2.99 haben und mit dem Buchstaben B beginnen.
--- b) Alle Filme mit einer Länge von 50 bis 70 Minuten. Sortiert nach der Filmlänge (length) aufsteigend.
--- c) Welche Filme besitzen das Special Feature "Trailers"?
--- d) Welche Filme haben eine Länge von 40 bis 60 Minuten und haben eine Ausleihgebühr von genau 4.99? Sortieren Sie die Ausgabe nach der Filmlänge aufsteigend.
--- e) Welche 15 Filme haben die höchste Ausleihgebühr (rental_rate)?
--- f) Wie viele Filme besitzen das Rating "G"?
--- g) Wie hoch ist die durchschnittliche Leihgebühr (rental_rate) aller Filme?
--- h) Einen zufälligen Filmtitel auswählen.
+SELECT * FROM film WHERE rental_rate BETWEEN 0.99 AND 2.99 AND title LIKE 'B%';
 
+-- b) Alle Filme mit einer Länge von 50 bis 70 Minuten. Sortiert nach der Filmlänge (length) aufsteigend.
+SELECT * FROM film WHERE length BETWEEN 50 AND 70;
+
+-- c) Welche Filme besitzen das Special Feature "Trailers"?
+SELECT * FROM film WHERE special_features = 'Trailers';
+
+-- d) Welche Filme haben eine Länge von 40 bis 60 Minuten und haben eine Ausleihgebühr von genau 4.99? Sortieren Sie die Ausgabe nach der Filmlänge aufsteigend.
+SELECT * FROM film WHERE rental_rate = 4.99 AND length BETWEEN 40 AND 60 ;
+
+-- e) Welche 15 Filme haben die höchste Ausleihgebühr (rental_rate)?
+SELECT * FROM film ORDER BY rental_rate DESC LIMIT 15;
+
+-- f) Wie viele Filme besitzen das Rating "G"?
+SELECT count(*) FROM film WHERE rating = 'G';
+
+-- g) Wie hoch ist die durchschnittliche Leihgebühr (rental_rate) aller Filme?
+SELECT avg(rental_rate) FROM film;
+
+-- h) Einen zufälligen Filmtitel auswählen.
+SELECT * FROM film ORDER BY rand() LIMIT 1;
 
 
 
