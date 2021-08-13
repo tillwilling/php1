@@ -4,7 +4,12 @@
 echo $_SERVER["HTTP_USER_AGENT"];
 echo '<hr>';
 
+// Ip-Adresse des Besuchers
 echo $_SERVER["REMOTE_ADDR"];
+echo '<hr>';
+
+// Woher kommt der Besucher?
+echo $_SERVER["HTTP_REFERER"];
 echo '<hr>';
 
 echo '<pre>';

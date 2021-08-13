@@ -65,14 +65,15 @@ function dieErstenFuenfZeichen($str) {
 // Schreiben Sie eine Funktion mit dem Namen "htmlListe". Die Funktion
 // soll die Werte eines zu übergebenen Arrays als HTML-Liste ausgeben.
 
-function htmlListe(array $data, $id = '') {
+function htmlListe(array &$data, $id = '') {
 	echo '<ul id="'.$id.'">';
 	foreach($data as $value) {
 		echo '<li>'.$value.'</li>';
 	}
 	echo '</ul>';
 }
-htmlListe(['Apfel','Birne','Orange'],'test')
+$obst = ['Apfel','Birne','Orange'];
+htmlListe($obst,'test')
 
 
 
