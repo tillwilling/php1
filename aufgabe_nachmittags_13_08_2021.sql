@@ -1,7 +1,7 @@
 -- Alle nachfolgenden Aufgaben gelten für die world-Datenbank.
 
 -- a) Alle Städte mit einer Einwohnerzahl von über 1 Mio.
-SELECT * FROM country WHERE population >10000000;
+SELECT * FROM city WHERE population >10000000;
 
 -- b) Die sieben Länder mit der höchsten Lebenserwartung.
 SELECT * FROM country ORDER BY lifeexpectancy DESC LIMIT 7;
@@ -16,7 +16,7 @@ SELECT * FROM city WHERE countrycode = 'NLD' AND population > 100000;
 SELECT * FROM city WHERE population BETWEEN 200000 AND 300000;
 
 -- f) Welche Länder haben die Regierungsform "Republic" oder "Federal Republic" oder "Monarchy"?
-SELECT * FROM country WHERE governmentform = "Republic" OR governmentform = "Monarchy";
+SELECT * FROM country WHERE IN("Republic","Federal Republic","Monarchy");
 
 -- g) In welchem afrikanischen Land ist die Lebenserwartung am höchsten?
 SELECT * FROM country WHERE continent = 'africa' ORDER BY lifeexpectancy DESC;
@@ -46,13 +46,13 @@ SELECT * FROM country WHERE name LIKE '%um';
 SELECT * FROM film WHERE rental_rate BETWEEN 0.99 AND 2.99 AND title LIKE 'B%';
 
 -- b) Alle Filme mit einer Länge von 50 bis 70 Minuten. Sortiert nach der Filmlänge (length) aufsteigend.
-SELECT * FROM film WHERE length BETWEEN 50 AND 70;
+SELECT * FROM film WHERE length BETWEEN 50 AND 70 ORDER BY length;
 
 -- c) Welche Filme besitzen das Special Feature "Trailers"?
-SELECT * FROM film WHERE special_features = 'Trailers';
+SELECT * FROM film WHERE special_features LIKE '%Trailers%';
 
 -- d) Welche Filme haben eine Länge von 40 bis 60 Minuten und haben eine Ausleihgebühr von genau 4.99? Sortieren Sie die Ausgabe nach der Filmlänge aufsteigend.
-SELECT * FROM film WHERE rental_rate = 4.99 AND length BETWEEN 40 AND 60 ;
+SELECT * FROM film WHERE rental_rate = 4.99 AND length BETWEEN 40 AND 60 ORDER BY length;
 
 -- e) Welche 15 Filme haben die höchste Ausleihgebühr (rental_rate)?
 SELECT * FROM film ORDER BY rental_rate DESC LIMIT 15;
@@ -66,7 +66,39 @@ SELECT avg(rental_rate) FROM film;
 -- h) Einen zufälligen Filmtitel auswählen.
 SELECT * FROM film ORDER BY rand() LIMIT 1;
 
+-- ************ SAKILA *****************
+-- JOIN (INNER JOIN)
 
+-- Welche Schauspieler haben mitgewirkt in dem Film "Agent Truman"?
+-- Benötigte Tabellen: film, film_actor, actor 
+SELECT film.title 
+FROM actor 
+JOIN film_actor 
+ON actor.actor_id = film_actor.actor_id 
+JOIN film 
+ON film_actor.film_id = film.film_id 
+WHERE actor.first_name = 'ED'
+AND actor.last_name = 'CHASE'; 
+
+-- Spalten-Alias 
+SELECT film.title AS Filmtitel 
+FROM actor 
+JOIN film_actor 
+ON actor.actor_id = film_actor.actor_id 
+JOIN film 
+ON film_actor.film_id = film.film_id 
+WHERE actor.first_name = 'ED'
+AND actor.last_name = 'CHASE'; 
+
+-- Tabellen-Alias 
+SELECT f.title 
+FROM actor AS a
+JOIN film_actor AS fa 
+ON a.actor_id = fa.actor_id 
+JOIN film AS f
+ON fa.film_id = f.film_id 
+WHERE a.first_name = 'ED'
+AND a.last_name = 'CHASE';
 
 
 
