@@ -1,0 +1,17 @@
+Kurs: 		PHP (Grundlagen)
+Zeitraum: 	04.08.2021 - 01.09.2021 (21 Tage) 
+Dozent: 	Michael Mündelein  
+Klausur: 	01.09.2021
+
+Tageszeitplan: 
+
+08:00 Uhr - 09:30 Uhr -> Unterricht 
+09:30 Uhr - 09:45 Uhr -> 1. Pause
+09:45 Uhr - 11:15 Uhr -> Übungen (Dozent ist im anderen Kurs)
+11:15 Uhr - 11:30 Uhr -> 2. Pause
+11:30 Uhr - 13:00 Uhr -> Unterricht 
+13:00 Uhr - 13:30 Uhr -> 3. Pause
+
+13:30 Uhr - 14:00 Uhr -> Unterrichtsnachbereitung 
+14:00 Uhr - 15:30 Uhr -> Übungen (Dozent ist im anderen Kurs)
+ab 15:30 Uhr -> Dozent steht für einzelne Fragen/Wiederholungen bereit
