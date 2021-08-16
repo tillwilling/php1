@@ -56,3 +56,14 @@ ON country.country_id = c.country_id
 WHERE country.country = "Germany";
 
 
+-- Datensatz einfügen
+INSERT INTO login (benutzer,passwort) VALUES ('karlheinz','geheim');
+INSERT INTO login VALUES (NULL,'susi','bekannt');
+
+-- Datensatz aktualisieren
+UPDATE login
+SET passwort='neu'
+WHERE benutzer='susi';
+
+-- Datensatz löschen
+DELETE FROM login WHERE benutzer='susi';
