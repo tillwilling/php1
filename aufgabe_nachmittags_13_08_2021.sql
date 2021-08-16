@@ -49,7 +49,7 @@ SELECT * FROM film WHERE rental_rate BETWEEN 0.99 AND 2.99 AND title LIKE 'B%';
 SELECT * FROM film WHERE length BETWEEN 50 AND 70 ORDER BY length;
 
 -- c) Welche Filme besitzen das Special Feature "Trailers"?
-SELECT * FROM film WHERE special_features LIKE '%Trailers%';
+SELECT title,special_features FROM film WHERE special_features LIKE "%Trailers%";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       SELECT * FROM film WHERE special_features LIKE '%Trailers%';
 
 -- d) Welche Filme haben eine Länge von 40 bis 60 Minuten und haben eine Ausleihgebühr von genau 4.99? Sortieren Sie die Ausgabe nach der Filmlänge aufsteigend.
 SELECT * FROM film WHERE rental_rate = 4.99 AND length BETWEEN 40 AND 60 ORDER BY length;
