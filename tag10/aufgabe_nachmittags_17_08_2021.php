@@ -5,7 +5,6 @@
 
 // Aufgabe 1: Geben Sie alle Städte aus der Datenbank world aus, die eine Einwohnerzahl 
 // von über 2 Mio. haben 
-
 $host 	= 'localhost';
 $user 	= 'root';
 $passwd = '';
@@ -25,16 +24,6 @@ while($row = mysqli_fetch_assoc($result)) {
 echo '<hr>';
 
 // Aufgabe 2: Geben Sie ein zufälliges Land aus der Datenbank world aus.
-$host 	= 'localhost';
-$user 	= 'root';
-$passwd = '';
-$dbname = 'world'; 
-
-$link = @mysqli_connect($host,$user,$passwd, $dbname);
-if(mysqli_connect_error()) {
-	die('Fehler ('.mysqli_connect_errno().'): '.mysqli_connect_error());
-}
-
 $query  = "SELECT country.name FROM country ORDER BY rand() LIMIT 1";
 $result = mysqli_query($link,$query);
 	
@@ -46,7 +35,6 @@ echo '<hr>';
 // Aufgabe 3: (Ist die Aufgabe 2 von heute!)
 // Über ein Formular soll es möglich sein eine Filmkategorie auszuwählen. 
 // Nach dem Absenden des Formulars sollen alle Filme dieser Filmkategorie angezeigt werden.
-
 $host 	= 'localhost';
 $user 	= 'root';
 $passwd = '';
@@ -67,8 +55,8 @@ while($row = mysqli_fetch_assoc($result)) {
 	echo '<option value="'.$row['category_id'].'">'.$row['name'].'</option>';
 }		
 ?>		
-	</select>
-	<input type="submit" name="senden" value="Filme anzeigen">
+</select>
+<input type="submit" name="senden" value="Filme anzeigen">
 </form>
 <?php 
 if(isset($_POST["senden"])) {
@@ -81,7 +69,7 @@ if(isset($_POST["senden"])) {
                     WHERE film_category.category_id = $category_id";
 		$result = mysqli_query($link,$query);
 		while($row = mysqli_fetch_assoc($result)) {
-			echo $row['title'].'<br>';
+			echo ucwords(strtolower($row['title'])).'<br>';
 		}
 	}
 }
