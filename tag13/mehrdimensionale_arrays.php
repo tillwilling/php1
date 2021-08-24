@@ -29,7 +29,6 @@ for($x=0; $x<count($stdplan); $x++) {
 	}
 }
 echo '<hr>';
-
 foreach($stdplan as $tag_arr) {
 	foreach($tag_arr as $fach) {
 		echo $fach.' ';
@@ -45,8 +44,6 @@ echo '<hr>';
 // Sport
 echo $stdplan2['Dienstag'][3];
 echo '<hr>';
-
-
 foreach($stdplan2 as $tag_arr) {
 	foreach($tag_arr as $fach) {
 		echo $fach.' ';
