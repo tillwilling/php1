@@ -1,0 +1,22 @@
+Klausur am 01.09.2021 um 09:00 Uhr 
+Klausurdauer: 120 Minuten 
+
+Alle Hilfsmittel erlaubt.
+
+Aufgabentypen:
+- Multiple Choice 
+- Offene Fragen 
+- Programmierung 
+- Fehlersuche 
+
+Themen:
+- Variablen / Arrays 
+- Kontrollstrukturen (if, switch, Schleifen)
+- Formulare auswerten 
+- POST und GET 
+- Benutzerdefinierte Funktionen 
+- Session 
+- Datum und Zeit 
+- Zeichenketten + Zeichenkettenfunktionen 
+- SQL 
+- MySQLi
