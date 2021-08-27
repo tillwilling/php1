@@ -1,0 +1,28 @@
+Olympische Spiele:
+
+Erstellen Sie mit Hilfe der MySQL-Workbench ein Datenbank-Schema:
+
+Für zurückliegende und kommende Olympische Spiele sollen die Wettkämpfe, 
+die Teilnehmer und ihre erzielten Ergebnisse erfasst werden.
+Es soll zugelassen sein, dass im selben Jahr am selben Ort sowohl Sommer- 
+als auch Winterspiele stattfinden können.
+
+Es interessiert bei welchen Spielen sie in welchem Alter für welche Nation 
+gestartet sind, ferner welches Geschlecht sie haben und welche Nationalität
+sie von Geburt an haben.
+
+Von den einzelnen Spielen interessieren die Wettkämpfe, das heißt in welchen 
+Sportarten (Schwimmen, Leichtathletik, Ski-Alpin, etc.) welche Wettbewerbe 
+(100m Freistilstaffel Frauen, Weitsprung Männer, Dressur-Reiten Mannschaft usw.)
+stattfinden, ob ein Wettkampf als Haupt- oder Demonstrationswettbewerb gilt und 
+ob er für Frauen, Männer oder gemischt ausgeschrieben ist.
+
+Von allen Teilnehmern interessiert, an welchen Wettkämpfen sie teilgenommen haben, 
+welchen Platz und welches Ergebnis (Zeit, Weite, Punkte etc.) sie dabei erzielt 
+haben.
+
+Aufgabe:
+
+- Finden Sie aus dem Aufgabentext alle Tabellen und Spalten
+- Übertragen Sie die gefundenen Tabellen in die MySQL-Workbench
+- Verbinden Sie die Tabellen (1:1, 1:n oder n:m)

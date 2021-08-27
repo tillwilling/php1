@@ -1,0 +1,46 @@
+Fussball
+--------
+Entwickeln Sie für folgenden Sachverhalt ein Datenbank-Diagramm:
+
+Der Schweizerische Fussballverband gibt zur bequemen Verfolgung der Fussballmeisterschaft 
+die Entwicklung einer Datenbank in Auftrag. 
+
+Für jede Mannschaft werden ein eindeutiger Name, die Ortschaft, der Name des Heimstadions 
+und eine Kontaktadresse erfasst.
+
+Für jeden Spieler werden eine eindeutige Identifikation, der Name, bestehend aus Vor- und 
+Nachnamen, die Adresse, bestehend aus Strasse, Hausnummer, PLZ und Wohnort, sowie das 
+Geburtsdatum erfasst; jeder Spieler spielt in genau einer Mannschaft. Pro Spieler 
+wird festgehalten, seit wann er der Mannschaft angehört und welche Aufgabe (Torwart, 
+Verteidiger, Stürmer etc) er in dieser Mannschaft übernimmt.
+
+Jedes Spiel erhält eine eindeutige (interne) Identifikation, es findet an einem bestimmten 
+Datum zu einer bestimmten Zeit (Anfangszeit) statt und wird von je einer Heim- und einer 
+Gastmannschaft bestritten. (Mit der Heimmannschaft ist zugleich der Austragungsort ohne 
+weiteres bestimmt.) 
+
+Für jedes Spiel wird erfasst, welche Spieler, welcher Schiedsrichter und welche Linienrichter 
+(aktiv) daran teilnehmen. Schiedsrichter und Linienrichter gehören zu keiner Mannschaft. 
+Von ihnen werden im Übrigen die gleichen Personen-Daten erfasst wie von den Spielern. 
+Pro Spiel gibt es einen Schiedsrichter und zwei Linienrichter.
+
+Der Spielverlauf wird erfasst, indem alle Ereignisse im betreffenden Spiel fortlaufend nummeriert 
+werden. Für jedes solche Ereignis wird zudem der Zeitpunkt (Minute und Sekunde) erfasst. Es 
+gibt verschiedene Spielereignisse, wie z.B: Spieler erzielt Tor, Spieler erzielt Eckball, 
+Spieler erzielt Torchance, ohne ein Tor zu erzielen, Spieler wird ausgewechselt, Spieler 
+wird eingewechselt, Spieler erhält gelbe Karte, Spieler erhält rote Karte, usw.
+
+Mannschaft: id, name, ort, heimstadion, kontaktadresse
+Spieler: id, vorname, nachname, straße, hausnummer, plz, wohnort, geburtsdatum, eintrittsdatum, position
+Spiel: id, datum, zeit, heimmannschaft, gastmannschaft
+Schiedsrichter: id, vorname, nachname, straße, hausnummer, plz, wohnort, geburtsdatum
+Linienrichter: id, vorname, nachname, straße, hausnummer, plz, wohnort, geburtsdatum
+Spielverlauf: id, nummmer, zeitpunkt, ereignis
+
+
+
+
+
+
+
+
